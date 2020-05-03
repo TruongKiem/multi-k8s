@@ -9,16 +9,16 @@ before_install:
 script:
     - docker run -e CI=true co/react-test npm test
 after_success:
-    - docker build -t co/multi-client ./client
-    - docker build -t co/multi-nginx  ./nginx
-    - docker build -t co/multi-server ./server
-    - docker build -t co/multi-worker ./worker
+    - docker build -t truongco/multi-client ./client
+    - docker build -t truongco/multi-nginx  ./nginx
+    - docker build -t truongco/multi-server ./server
+    - docker build -t truongco/multi-worker ./worker
     
     # Login in to ther docker CLI
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
     # Take those images and push them to docker hub
-    - docker push co/multi-client
-    - docker push co/multi-nginx
-    - docker push co/multi-server
-    - docker push co/multi-worker
+    - docker push truongco/multi-client
+    - docker push truongco/multi-nginx
+    - docker push truongco/multi-server
+    - docker push truongco/multi-worker
