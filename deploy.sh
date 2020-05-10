@@ -1,6 +1,6 @@
-docker build -t truongco/multi-client:latest -t truongco/multi-client:$SHA -f /client/Dockerfile ./client
-docker build -t truongco/multi-server:latest -t truongco/multi-server:$SHA -f /server/Dockerfile ./server
-docker build -t truongco/multi-worker:latest -t truongco/multi-worker:$SHA -f /worker/Dockerfile ./worker
+docker build -t truongco/multi-client:latest -t truongco/multi-client:$SHA -f ./client/Dockerfile ./client
+docker build -t truongco/multi-server:latest -t truongco/multi-server:$SHA -f ./server/Dockerfile ./server
+docker build -t truongco/multi-worker:latest -t truongco/multi-worker:$SHA -f ./worker/Dockerfile ./worker
 
 docker push truongco/multi-client:latest
 docker push truongco/multi-server:latest
